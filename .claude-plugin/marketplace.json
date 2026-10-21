@@ -1,0 +1,14 @@
+{
+  "name": "evaboot-labs-ai-linkedin-connection-notes",
+  "owner": { "name": "Evaboot", "url": "https://evaboot.com" },
+  "metadata": {
+    "description": "An AI Agent that writes a personalised LinkedIn connection note for every new lead, from real profile data, and queues them for you to approve and send."
+  },
+  "plugins": [
+    {
+      "name": "ai-linkedin-connection-notes",
+      "source": "./",
+      "description": "Find in-market leads in Sales Navigator, export them with Evaboot, and write one short connection note per lead from real data, for you to approve."
+    }
+  ]
+}
