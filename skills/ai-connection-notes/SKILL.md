@@ -19,9 +19,9 @@ You do the Sales Navigator and Evaboot work through the Evaboot MCP server (`htt
 ## Step 0: check the setup
 
 1. If the Evaboot MCP tools are not in this session, walk the user through `docs/connect-your-agent.md`, then ask them to restart the agent from this folder: `EVABOOT_API_KEY` is read only when the agent starts.
-2. Otherwise call `verify_token` and `get_daily_export_quota`. `has_valid_salesnav` must be true.
+2. Otherwise call `verify_token` and `get_daily_export_quota`. If `has_valid_salesnav` is false, ask the user to sign in to Evaboot in Chrome, open any Sales Navigator search with the Evaboot extension, and click Export with Evaboot (opening the export page is enough), then call the quota again.
 3. Run `mkdir -p data queue`. Both folders are git-ignored.
-4. Read `NOTES.md`. If it still holds the example, ask the user who they target, which signal, how many a day, and who they are. Update the file.
+4. Read `NOTES.md`. If it says `Status: EXAMPLE`, ask the user who they target, which signal, how many a day, and who they are. Rewrite the file and set `Status: yours`.
 
 ## Step 1: build the search
 
@@ -32,7 +32,7 @@ You do the Sales Navigator and Evaboot work through the Evaboot MCP server (`htt
 
 ## Step 2: export
 
-On a yes, call `export_sn_search_or_list` on the search URL with `max_results` = the daily number and a clear `search_name`. Poll `get_export` until the status is `EXECUTED`. Save the JSON to `data/export.json`, then:
+If the preview total is below the daily number, export what there is. On a yes, call `export_sn_search_or_list` on the search URL with `max_results` = the daily number and a clear `search_name`. Poll `get_export` until the status is `EXECUTED`. Save the JSON to `data/export.json`, then:
 
 ```bash
 python3 notes.py facts data/export.json > queue/facts.json
@@ -60,7 +60,7 @@ Fix every `FAIL` and run it again.
 python3 notes.py sheet queue/facts.json queue/notes.json > queue/queue.csv
 ```
 
-Put it where the user reviews: a Google Sheet when the session has a Google Drive tool, otherwise the CSV. Ask them to read the notes, edit any they want, and mark the `Send` column.
+Put it where the user reviews: a Google Sheet when the session has a Google Drive tool, otherwise give them the path of the CSV to open in any spreadsheet app. Ask them to read the notes, edit any they want, and mark the `Send` column.
 
 ## Step 5: sending, by the user
 

@@ -3,6 +3,8 @@ Evaboot MCP, writes the notes itself, and uses these commands to keep the facts 
 on every run.
 
     python3 notes.py lead-url "<url>" --industry 4 --headcount D E  add industry and company size to a search
+        industry 4 = Software Development; headcount B 1-10, C 11-50, D 51-200, E 201-500,
+        F 501-1000, G 1001-5000, H 5001-10000, I 10001+
     python3 notes.py facts <export.json> > queue/facts.json        the real hooks per lead
     python3 notes.py check <facts.json> <notes.json>               300-character limit, no invented hooks
     python3 notes.py sheet <facts.json> <notes.json> > queue/queue.csv
@@ -104,7 +106,7 @@ def sheet(facts_path, notes_path):
 
 
 def main():
-    ap = argparse.ArgumentParser()
+    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     sub = ap.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("lead-url"); a.add_argument("url")
     a.add_argument("--industry", nargs="*", default=[]); a.add_argument("--headcount", nargs="*", default=[])

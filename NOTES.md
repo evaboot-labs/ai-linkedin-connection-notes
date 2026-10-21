@@ -1,6 +1,6 @@
 # Who you write to, and how
 
-Example: replace it with your own, or let your agent ask you.
+Status: EXAMPLE. Your agent asks you and replaces this line with "Status: yours" once the file is yours.
 
 ## Who
 
