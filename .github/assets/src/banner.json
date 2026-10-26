@@ -1,0 +1,7 @@
+{"layout": "flow", "eyebrow": "evaboot-labs · ai-linkedin-connection-notes", "headline": "A real reason to connect.",
+ "subline": "Leads with an intent signal in. One approved note per lead out.",
+ "nodes": [{"label": "01 · Signal", "title": "Sales Navigator", "caption": "Changed jobs or posted"},
+           {"label": "02 · Data", "title": "Evaboot", "caption": "Profile and company facts"},
+           {"label": "03 · Notes", "title": "AI Agent", "caption": "Under 300 characters"},
+           {"label": "04 · Result", "title": "Your queue", "caption": "You approve and send"}],
+ "spec": "server <em>mcp.evaboot.com/mcp</em> · nothing is sent on LinkedIn"}

@@ -1,0 +1,13 @@
+{
+  "name": "ai-linkedin-connection-notes",
+  "version": "1.0.0",
+  "description": "Find in-market leads in Sales Navigator, export them with Evaboot, and write one short connection note per lead from real data, for you to approve.",
+  "author": { "name": "Evaboot", "url": "https://evaboot.com" },
+  "homepage": "https://evaboot.com/blog/how-to-automate-linkedin-prospecting-with-ai",
+  "repository": "https://github.com/evaboot-labs/ai-linkedin-connection-notes",
+  "license": "MIT",
+  "privacyPolicyUrl": "https://evaboot.com/privacy-policy",
+  "keywords": ["linkedin-prospecting", "connection-request", "sales-navigator", "evaboot", "mcp", "ai-agent"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json"
+}
